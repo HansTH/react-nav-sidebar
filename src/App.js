@@ -1,10 +1,39 @@
 import React, { Component } from 'react';
 
-export class App extends Component {
+// components
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import Backdrop from './components/Backdrop/Backdrop';
+import './App.css';
+
+class App extends Component {
+  state = {
+    sideBarOpen: false
+  };
+
+  handleToggleSidebarOpen = () => {
+    this.setState(prevState => {
+      return { sideBarOpen: !prevState.sideBarOpen };
+    });
+  };
+
+  handleSidebarClose = () => {
+    this.setState({ sideBarOpen: false });
+  };
+
   render() {
+    const { sideBarOpen } = this.state;
+
     return (
-      <div>
-        <h1>Hello React</h1>
+      <div className='app'>
+        <Sidebar sidebarClose={this.handleSidebarClose} show={sideBarOpen} />
+        <Backdrop sidebarClose={this.handleSidebarClose} show={sideBarOpen} />
+        <div className='container'>
+          <Navbar toogleSidebarOpen={this.handleToggleSidebarOpen} />
+          <main className='main'>
+            <h1>Content page</h1>
+          </main>
+        </div>
       </div>
     );
   }

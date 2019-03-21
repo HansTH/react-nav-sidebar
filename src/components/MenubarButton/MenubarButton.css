@@ -1,0 +1,20 @@
+.menubarButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+  width: 25px;
+}
+
+.menubarButton-line {
+  height: 4px;
+  width: 100%;
+  background-color: #fff;
+}
+
+@media (min-width: 769px) {
+  .menubarButton {
+    display: none;
+  }
+}

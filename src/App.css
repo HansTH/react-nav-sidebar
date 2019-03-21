@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.app {
+  background: url('./img/landscape02.jpeg') no-repeat center center/cover;
+  height: 100%;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+.main {
+  margin-top: 66px;
+}
